@@ -1,0 +1,28 @@
+{
+    "name": "lanzhi/php-coroutine-redis-client",
+    "keywords": ["php", "coroutine", "redis", "client", "Redis client"],
+    "description": "php coroutine redis client",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "蓝至",
+            "email": "i@lanzhi.me"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.0",
+        "lanzhi/php-coroutine-socket": "^0.0.14",
+        "psr/log": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {"lanzhi\\redis\\": "src/"}
+    },
+    "require-dev": {
+        "symfony/console": "^4.0",
+        "predis/predis": "^1.1",
+        "m6web/redis-mock": "^3.3",
+        "illuminate/redis": "^5.6"
+    }
+}
