@@ -13,9 +13,19 @@ use lanzhi\redis\commands\AbstractCommand;
 
 class BitCountCommand extends AbstractCommand
 {
+
     public function getCommandId(): string
     {
         return 'BITCOUNT';
+    }
+
+    public function prepare(): void
+    {
+        $args = $this->getArguments();
+        if(count($args)==2){
+            $args[] = PHP_INT_MAX;
+        }
+        $this->setArguments($args);
     }
 
     public function getDoc()

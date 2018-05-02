@@ -17,12 +17,12 @@ use lanzhi\redis\commands\AbstractCommand;
  *
  * @method int getReturn()
  */
-class TllCommand extends AbstractCommand
+class TTlCommand extends AbstractCommand
 {
 
     public function getCommandId(): string
     {
-        return "TLL";
+        return "TTL";
     }
 
     public function getDoc()

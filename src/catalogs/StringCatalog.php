@@ -14,6 +14,7 @@ use lanzhi\redis\commands\strings\BitCountCommand;
 use lanzhi\redis\commands\strings\GetBitCommand;
 use lanzhi\redis\commands\strings\GetCommand;
 use lanzhi\redis\commands\strings\IncrByCommand;
+use lanzhi\redis\commands\strings\IncrCommand;
 use lanzhi\redis\commands\strings\SetBitCommand;
 use lanzhi\redis\commands\strings\SetCommand;
 
@@ -29,6 +30,7 @@ use lanzhi\redis\commands\strings\SetCommand;
  *     返回 key 所关联的字符串值，如果 key 不存在，返回-1，如果 key 存在，但不是字符串类型，则报错
  *
  * @method RoutineUnitInterface incrBy(string $key, int $increment)
+ * @method RoutineUnitInterface incr(string $key)
  *
  * @method RoutineUnitInterface setBit(string $key, int $offset, int $zeroOrOne)
  * @method RoutineUnitInterface getBit(string $key, int $offset)
@@ -42,6 +44,7 @@ class StringCatalog extends AbstractCatalog
         return [
             'set'     => SetCommand::class,
             'get'     => GetCommand::class,
+            'incr'    => IncrCommand::class,
             'incrBy'  => IncrByCommand::class,
             'setBit'  => SetBitCommand::class,
             'getBit'  => GetBitCommand::class,
